@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Floater : MonoBehaviour
 {
-    public RigidBody rigidBody;
-    
+    public Rigidbody rigidBody;
+    public float depthBeforeSubmerged = 1f;
+    public float displacementAmmount = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +15,12 @@ public class Floater : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        if(transform.position.y < 0f)
+        {
+          float displacementMultiplier = Mathf.Clamp01(-transform.position.y/depthBeforeSubmerged)*displacementAmmount;
+          rigidBody.AddForce(new Vector3(0f, Mathf.Abs(Physics.gravity.y) *displacementMultiplier, 0f), ForceMode.Acceleration);
+        }
     }
 }

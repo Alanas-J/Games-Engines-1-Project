@@ -20,7 +20,7 @@ public class WaveManager : MonoBehaviour
 
     // For Given x value, will need to be changed for Perlin's X/Y axis
     public float GetWaveHeight(float _x){
-        return aplitude * Mathf.Sin(_x/length);
+        return aplitude * Mathf.Sin(_x/length + offset);
     }
 
 

@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterHeightAtPoint : MonoBehaviour
+public class OceanController: MonoBehaviour
 {
 
     // Singleton instance
-    public static WaveManager instance;
+    public static OceanController instance;
 
     // Wave Parametres
-    public float aplitude = 1f;
-    public float length = 2f;
+    public float amplitude = 1f;
+    public float wave_scale = 2f;
     public float speed = 1f;
-    public float offset = 0f;
+    public float offset_x = 0f;
+    public float offset_y = 0f;
 
     private void Update(){
-        offset += Time.deltaTime * speed;
+        offset_x += Time.deltaTime * speed;
+        offset_y+= Time.deltaTime * speed;
     }
 
     // For Given x value, will need to be changed for Perlin's X/Y axis
-    public float GetWaveHeight(float _x){
-        return aplitude * Mathf.Sin(_x/length + offset);
+    public float GetOceanHeight(float x, float y){
+        float x_coordinate = (float)x/wave_scale + offset_x;
+        float y_coordinate = (float)y/wave_scale + offset_y;
+        return Mathf.PerlinNoise(x_coordinate, y_coordinate);
     }
-
 
 
     // Singleton code
@@ -35,4 +38,4 @@ public class WaterHeightAtPoint : MonoBehaviour
             Destroy(this);
         }
     }
-}
+}    

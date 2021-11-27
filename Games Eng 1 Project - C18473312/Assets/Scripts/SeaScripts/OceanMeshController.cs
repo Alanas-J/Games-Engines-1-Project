@@ -5,25 +5,29 @@ using UnityEngine;
 public class OceanMeshController : MonoBehaviour
 {
     public int terrain_width = 256;
-    public int terrain_height = 256;
+    public int terrain_depth = 256;
     public float terrain_scale = 10f;
+    Terrain water;
 
     void Start()
     {
-        
+        water = GetComponent<Terrain>();
         
     }
 
     void Update(){
-        Terrain water = GetComponent<Terrain>();
         water.terrainData = GenerateOcean(water.terrainData);
     }
-
+ 
     TerrainData GenerateOcean(TerrainData data)
     {
-        data.heightmapResolution = terrain_width + 1;
+        // Will need to read into heightmapResolution
+        data.heightmapResolution = terrain_width; // Was set to width +1 originally
 
-        data.size = new Vector3(terrain_width,  OceanController.instance.amplitude, terrain_height);  // The Vector3 takes in 3 integer values, but which values and in what order?
+        // Size of the terrain, X axis, Y axis and Z axis
+        data.size = new Vector3(terrain_width,  OceanController.instance.amplitude, terrain_depth);
+
+        // Will need to check what all parametres do ( most likely culprit);
         data.SetHeights(0, 0, GetHeights());
 
         return data;
@@ -31,12 +35,20 @@ public class OceanMeshController : MonoBehaviour
 
     float[,] GetHeights()
     {
-        float[,] heights = new float[terrain_width, terrain_height];
+        // 2D array of heights to collect height data from the ocean controller.
+
+        // An array is stored as row x column (IMPORTANT to solve the XY and array mismatch.)
+        float[,] heights = new float[terrain_depth, terrain_width];
+
+        // For X co-ord
         for (int x = 0; x < terrain_width; x++) 
         {
-            for (int y = 0; y < terrain_height; y++)
+            // For Z co-ord
+            for (int z = 0; z < terrain_depth; z++)
             {
-                heights[x, y] = OceanController.instance.GetOceanHeight(x+terrain_width, y+terrain_height);
+                // Assign in row + column format.
+                heights[z, x] = OceanController.instance.GetOceanHeight(x, z); // Now need to look into the ocean controller
+
             }
         }
         return heights;

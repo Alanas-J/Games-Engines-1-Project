@@ -10,20 +10,29 @@ public class OceanController: MonoBehaviour
 
     // Wave Parametres
     public float amplitude = 1f;
+
+    // Divides how much of the perlin map is used, more division (more zoom);
     public float wave_scale = 2f;
-    public float speed = 1f;
+    
+    // Used to offset perlin map render.
     public float offset_x = 0f;
     public float offset_y = 0f;
 
+    // Speed of ofsetting to simulate waves.
+    public float speed = 1f;
+
+
     private void Update(){
         offset_x += Time.deltaTime * speed;
-        offset_y+= Time.deltaTime * speed;
+        offset_y += Time.deltaTime * speed;
     }
 
     // For Given x value, will need to be changed for Perlin's X/Y axis
     public float GetOceanHeight(float x, float y){
-        float x_coordinate = (float)x/wave_scale + offset_x;
-        float y_coordinate = (float)y/wave_scale + offset_y;
+        float x_coordinate = x/wave_scale + offset_x;
+        float y_coordinate = y/wave_scale + offset_y;
+
+        // Returns 0, 1 value.
         return Mathf.PerlinNoise(x_coordinate, y_coordinate);
     }
 

@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e26e7b5ffd00d48b2c13d284d1ebfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textureRenderer: {fileID: 907087776}
+  textureRender: {fileID: 907087776}
 --- !u!114 &673107579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,10 +342,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ff579410e77df4294f709449428b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map_width: 100
-  map_height: 100
-  noise_scale: 27.5
+  drawMode: 1
+  mapWidth: 399
+  mapHeight: 401
+  noiseScale: 34
+  octaves: 10
+  peristance: 0.883
+  lacunarity: 1.06
+  seed: 21
+  offset: {x: 13.4, y: 6.26}
   updateOnChange: 1
+  regions:
+  - name: Water
+    height: 0.75
+    colour: {r: 0.30727762, g: 0.54029626, b: 1, a: 0}
+  - name: Sand
+    height: 0.76
+    colour: {r: 0.7647059, g: 0.7467611, b: 0.019607842, a: 0}
+  - name: Grass
+    height: 0.81
+    colour: {r: 0.2804111, g: 0.5566038, b: 0, a: 0}
+  - name: Mountain
+    height: 0.87
+    colour: {r: 0.3773585, g: 0.26535547, b: 0, a: 0}
+  - name: Peak
+    height: 1.7
+    colour: {r: 1, g: 1, b: 1, a: 0}
 --- !u!4 &673107580
 Transform:
   m_ObjectHideFlags: 0
@@ -451,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 907087774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalScale: {x: 399, y: 1, z: 401}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3

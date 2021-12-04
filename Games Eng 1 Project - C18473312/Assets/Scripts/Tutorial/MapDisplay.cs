@@ -30,16 +30,4 @@ public class MapDisplay : MonoBehaviour
         textureRenderer.transform.localScale = new Vector3(width,1,height);
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -4,17 +4,46 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public int map_width;
-    public int map_height;
-    public float noise_scale;
+    public int mapWidth;
+    public int mapHeight;
+    public float noiseScale;
+
+    public int octaves;
+
+    [Range(0,1)]
+    public float peristance;
+    public float lacunarity;
+    
+    public int seed;
+    public Vector2 offset;
+
     public bool updateOnChange;
 
 
     public void GenerateMap(){
-        float[,] noise_map = Noise.GenerateNoiseMap(map_width,map_height, noise_scale);
+        float[,] noise_map = Noise.GenerateNoiseMap(mapWidth, mapHeight, seed, noiseScale, octaves, peristance, lacunarity, offset);
 
 
         MapDisplay display = FindObjectOfType<MapDisplay> ();
         display.DrawNoiseMap(noise_map);
     }
+
+    void OnValidate() {
+        if(mapWidth < 1){
+            mapWidth = 1;
+        }
+        if(mapHeight < 1){
+            mapHeight = 1;
+        }
+        if(lacunarity < 1){
+            lacunarity = 1;
+        }
+        if(octaves < 0){
+            octaves = 0;
+        }
+    }
+}
+
+public struct TerrainType  {
+    public float
 }

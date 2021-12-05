@@ -11,7 +11,7 @@ public class MapGenerator : MonoBehaviour
     public DrawMode drawMode;
 
     // Mesh size limiter for LOD changing, replaced map width and map height
-    const int mapChunkSize = 241;
+    public const int mapChunkSize = 241;
     
     // Slider
     [Range(0,6)]
@@ -37,6 +37,9 @@ public class MapGenerator : MonoBehaviour
     public bool updateOnChange;
 
     public TerrainType[] regions;
+
+
+    //public void()
 
     public void GenerateMap(){
         float[,] noiseMap = Noise.GenerateNoiseMap(mapChunkSize, mapChunkSize, seed, noiseScale, octaves, peristance, lacunarity, offset);

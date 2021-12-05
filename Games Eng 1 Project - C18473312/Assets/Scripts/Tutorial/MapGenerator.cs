@@ -6,7 +6,7 @@ public class MapGenerator : MonoBehaviour
 {
     // Flick between generation output.
     public enum DrawMode{
-        NoiseMap, ColourMap
+        NoiseMap, ColourMap, Mesh
     }
     public DrawMode drawMode;
 
@@ -22,6 +22,8 @@ public class MapGenerator : MonoBehaviour
     
     public int seed;
     public Vector2 offset;
+    public float meshHeightMultiplier;
+    public AnimationCurve meshHeightCurve;
 
     public bool updateOnChange;
 
@@ -53,6 +55,9 @@ public class MapGenerator : MonoBehaviour
             display.DrawTexture(TextureGenerator.TextureFromHeightMap(noiseMap));
         } else if(drawMode == DrawMode.ColourMap){
             display.DrawTexture(TextureGenerator.TextureFromColourMap(colourMap, mapWidth, mapHeight));
+        }
+        else if(drawMode == DrawMode.Mesh){
+            display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, meshHeightMultiplier, meshHeightCurve), TextureGenerator.TextureFromColourMap(colourMap, mapWidth, mapHeight));
         }
         
     }

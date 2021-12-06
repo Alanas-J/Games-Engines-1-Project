@@ -12,6 +12,8 @@ public class MapGenerator : MonoBehaviour
     }
     public DrawMode drawMode;
 
+    public Noise.NormalizeMode normalizeMode;
+
     // Mesh size limiter for LOD changing, replaced map width and map height
     public const int mapChunkSize = 241;
     
@@ -116,7 +118,7 @@ public class MapGenerator : MonoBehaviour
     }
 
     MapData GenerateMapData(Vector2 centre){
-        float[,] noiseMap = Noise.GenerateNoiseMap(mapChunkSize, mapChunkSize, seed, noiseScale, octaves, peristance, lacunarity, centre+offset);
+        float[,] noiseMap = Noise.GenerateNoiseMap(mapChunkSize, mapChunkSize, seed, noiseScale, octaves, peristance, lacunarity, centre+offset, normalizeMode);
 
         // Colouring code
         Color[] colourMap = new Color[mapChunkSize*mapChunkSize];
@@ -126,11 +128,11 @@ public class MapGenerator : MonoBehaviour
 
                 for(int i = 0; i<regions.Length; i++){
                     
-                    if(currentHeight <= regions[i].height){
+                    if(currentHeight >= regions[i].height){
 
                         // Using a 1d array as 2d
                         colourMap[y*mapChunkSize+ x] = regions[i].colour;
-                        break;
+                        //break;
                     } 
                 }
             }

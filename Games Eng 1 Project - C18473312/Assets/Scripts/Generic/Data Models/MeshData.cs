@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Used to instantiate a mesh.
 public class MeshData {
     public Vector3[] vertices;
     public int[] triangles;

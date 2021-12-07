@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Threading;
 
-// Job of this script is to output Terrain Chunk Data
+// Job of this script is to output Terrain Chunk Data (Heightmap and colour map)
 public class ChunkDataGenerator : MonoBehaviour
 {
     // Constant Variables

@@ -163,13 +163,6 @@ public class MapGenerator : MonoBehaviour
     }
 }
 
-// Data type visble to unity.
-[System.Serializable]
-public struct TerrainType  {
-    public string name;
-    public float height;
-    public Color colour;
-}
 
 public struct MapData{
     public float[,] heightMap;

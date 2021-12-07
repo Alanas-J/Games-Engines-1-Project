@@ -5,7 +5,7 @@ using System;
 using System.Threading;
 
 // Job of this script is to output Terrain Chunk Data (Heightmap and colour map)
-public class ChunkDataGenerator : MonoBehaviour
+public class LandChunkDataGenerator : MonoBehaviour
 {
     // Constant Variables
     public const int chunkSize = 241; // 241 vertices, making a 240 length piece.

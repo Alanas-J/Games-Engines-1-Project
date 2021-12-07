@@ -2,22 +2,21 @@
 
 
 /*
- Noise (The imnplementation of perlin imput for terrain gen), takes input and uses perlin accordingly.
+static class Noise (The imnplementation of perlin imput for terrain gen), takes input and uses perlin accordingly.
 
- ChunkDataGenerator uses Noise to Create a heightmap and colour map. 
+ Monobehaviour : ChunkDataGenerator uses Noise to Create a heightmap and colour map. 
     - ChunkData is a model used here
 
+    - Handles threadloading of get meshData and chunkdata
 
-MeshGen, returns ChunkMesh from ChunkData
+static classMeshGen, returns ChunkMesh from ChunkData
 TextureGen, returns ChunkTexture from ChunkData
 
 ChunkRenderer - Will Attach to an object which will own all chunks. Will take input of transform to follow.
 Will keep track of all active chunks and toggle on render distance.
 
 
-
-
-ChunkRenderInEditor - will need to figure out.
+ChunkRenderInEditor - will need to figure out. Calls On Chunk Renderer Methods in Editor.
 
 
 // ======= For water ======== WILL LOOK AT BELOW IN MORE DETAIL AS I GET TO IT

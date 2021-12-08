@@ -51,7 +51,7 @@ public class SeaGenerator : MonoBehaviour{
         viewerPosition = new Vector2(viewer.position.x, viewer.position.z) /scale ;
 
         // update throttler
-        updateCounter += Time.deltaTime*15;
+        updateCounter += Time.deltaTime*30;
         if(updateCounter > 1){
             UpdateVisibleChunks();
             updateCounter = 0;

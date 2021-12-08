@@ -442,7 +442,7 @@ MonoBehaviour:
   mapMaterial: {fileID: 2100000, guid: c306b549d0ac0804eb115ae4c9020e6b, type: 2}
   renderDistanceLodLevels:
   - lod: 3
-    visibleDstThresh: 400
+    visibleDstThresh: 300
 --- !u!114 &1578876697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   lacunarity: 1.15
   seed: 86
   offset: {x: 0, y: 0}
-  heightMultiplier: 50
+  heightMultiplier: 30
   meshHeightCurve:
     serializedVersion: 2
     m_Curve:
@@ -522,7 +522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2060463620
 Transform:
   m_ObjectHideFlags: 0
@@ -531,7 +531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060463619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewer: {fileID: 990610577}
   mapMaterial: {fileID: 2100000, guid: e08e2ef2cc0f2bd4ea1131d76a7888f8, type: 2}
-  renderDistance: 150
+  renderDistance: 300
   levelOfDetailDivider: 24
 --- !u!114 &2060463622
 MonoBehaviour:
@@ -568,4 +568,4 @@ MonoBehaviour:
   waveFrequency: 30
   offset: {x: 0, y: 0}
   offsetSpeed: {x: 2, y: 1}
-  waveHeightMultiplier: 10
+  waveHeightMultiplier: 20

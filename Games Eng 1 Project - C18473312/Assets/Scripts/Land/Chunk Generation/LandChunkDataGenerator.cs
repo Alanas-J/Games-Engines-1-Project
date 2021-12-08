@@ -111,9 +111,9 @@ public class LandChunkDataGenerator : MonoBehaviour
 
     // For the main thread to call
     void CheckThreadQueues(){
-        if(mapDataThreadOutputQueue.Count > 0){
-            for(int i = 0; i < mapDataThreadOutputQueue.Count; i++){
-                DataCallbackPair<MapData> threadOutput = mapDataThreadOutputQueue.Dequeue();
+        if(chunkDataThreadOutputQueue.Count > 0){
+            for(int i = 0; i < chunkDataThreadOutputQueue.Count; i++){
+                DataCallbackPair<ChunkData> threadOutput = chunkDataThreadOutputQueue.Dequeue();
                 threadOutput.callback(threadOutput.data);
             }
         }

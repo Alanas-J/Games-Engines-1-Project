@@ -19,14 +19,14 @@ public class LandGenerator : MonoBehaviour {
 
     // Last lod element defines the render distance.    
     public LODThreshold[] renderDistanceLodLevels;
-    float renderDistance;
+    public static float renderDistance;
 
     // ==================== Land Generation Variables ===========================
 
     // User to keep a dictionary of all chunks generated ever, the key is coordinates.
     Dictionary<Vector2, LandChunk> LandChunks = new Dictionary<Vector2, LandChunk>();
     // List of visible terain chunks so they can be validated if they should be currently shown.
-    static List<LandChunk> visibleTerrainChunks = new List<LandChunk>();
+    public static List<LandChunk> visibleTerrainChunks = new List<LandChunk>();
 
     static LandChunkDataGenerator landChunkDataGenerator; 
     int chunkLength;

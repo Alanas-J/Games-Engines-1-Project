@@ -23,8 +23,14 @@ public class LandChunk {
         bool chunkDataReceived = false; // Flag if chunk has heightmap received from async callback.
         int previousLODIndex = -1; // Used to see if the same lod mesh was used last update
 
+        // The parent land generator
+        LandGenerator landGenerator; // Will need to refactor if time, passing whole parent object means less required constructoe args
+
         // ================================== Constructor =========================================================
         public LandChunk(Vector2 chunkCoord, int size, float scale, LODThreshold[] detailLevelThresholds, Transform parentObject, LandGenerator landGenerator, LandChunkDataGenerator landChunkDataGenerator, Material material) {
+
+            // For pulling data from the managing generator.
+            this.landGenerator = landGenerator;
 
             // Create the game object
             chunkObject = new GameObject("Land Chunk");
@@ -37,7 +43,7 @@ public class LandChunk {
             position = chunkCoord * size; // position is scaled from chunk coordinates.
             bounds = new Bounds(position, Vector2.one*size); // Bounds on perimetre of chunk created.
             Vector3 positionV3 = new Vector3(position.x, 0, position.y); //3D coordinates
-            chunkObject.transform.parentObject = parentObject; // Parent Object
+            chunkObject.transform.parent = parentObject; // Parent Object
             chunkObject.transform.position = positionV3*scale; //Adjust postion by scale if used.
             chunkObject.transform.localScale = Vector3.one*scale; // Adjust scale of object if used.
         
@@ -51,7 +57,7 @@ public class LandChunk {
             }
 
             // Request initial data for current position with Callback.
-            landChunkDataGenerator.RequestMapData(position, OnChunkDataReceived);
+            landChunkDataGenerator.RequestChunkData(position, OnChunkDataReceived);
         }
         // =====================================================================================
 
@@ -60,8 +66,8 @@ public class LandChunk {
             this.chunkData = chunkData;
             chunkDataReceived = true;
 
-            // Generates the texture for the terrain from the colour map.
-            Texture2D texture = TextureGenerator.TextureFromColourMap(landChunkData.colourMap, LandChunkDataGenerator.mapChunkSize, LandChunkDataGenerator.mapChunkSize);
+            // Generates the texture for the terrain from the colour array.
+            Texture2D texture = TextureGenerator.TextureFromColourArray(chunkData.colourMap, LandChunkDataGenerator.chunkSize, LandChunkDataGenerator.chunkSize);
             meshRenderer.material.mainTexture = texture;
             UpdateChunk();
         }
@@ -71,15 +77,15 @@ public class LandChunk {
             if(chunkDataReceived){
 
                 // Check the postion of point to the chunk boundary.
-                float viewerDistanceFromEdge = Mathf.Sqrt(bounds.SqrDistance(landGenerator.viewerPosition));
-                bool visible = viewerDistanceFromEdge <= renderDistance;
+                float viewerDistanceFromEdge = Mathf.Sqrt(bounds.SqrDistance(LandGenerator.viewerPosition));
+                bool visible = viewerDistanceFromEdge <= LandGenerator.renderDistance;
 
                 if(visible){
                     int lodIndex = 0;
                     
                     // Cycling through all lod thresholds from shortest.
-                    for(int i = 0; i < detailLevelThresholds.Length -1; i++){
-                        if(viewerDistanceFromEdge > detailLevelThresholds[i].visibleDstThresh){
+                    for(int i = 0; i < landGenerator.renderDistanceLodLevels.Length -1; i++){
+                        if(viewerDistanceFromEdge > landGenerator.renderDistanceLodLevels[i].visibleDstThresh){
                             lodIndex = i+1;
                         } else{
                             break;
@@ -95,12 +101,12 @@ public class LandChunk {
                             meshFilter.mesh = lodMesh.mesh;
                             previousLODIndex = lodIndex;
                         } else if (!lodMesh.hasRequestedMesh){
-                            lodMesh.RequestMesh(landChunkData);
+                            lodMesh.RequestMesh(chunkData);
                         }
                     }
 
                     // Add to land generators list of visible chunks.
-                    landGenerator.visibleTerrainChunks.Add(this);
+                    LandGenerator.visibleTerrainChunks.Add(this);
                     SetVisible(visible);
                 }
             }

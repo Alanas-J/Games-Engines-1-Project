@@ -13,7 +13,7 @@ public class SeaChunkDataController : MonoBehaviour
     public float waveFrequency; // How much zoom into the noise map.
     
     public Vector2 offset; // Input offset.
-    public Vector2 offSetSpeed; // Ammount waves change.
+    public Vector2 offsetSpeed; // Ammount waves change.
 
     public float waveHeightMultiplier; // amplitude
 
@@ -59,7 +59,7 @@ public class SeaChunkDataController : MonoBehaviour
 
     // Will be used by floaters
     float GetHeightAtPoint(Vector2 centre){
-        return waveHeightMultiplier*SeaNoiseSource.GetHeightAtPoint(chunkSize,  waveFrequency, centre+offset);
+        return waveHeightMultiplier*SeaNoiseSource.GetHeightAtPoint(waveFrequency, centre+offset);
     }
 
 
@@ -107,7 +107,7 @@ public class SeaChunkDataController : MonoBehaviour
         new Thread(threadStart).Start();
     }
     void MeshDataThread(ChunkData mapData,int lod, Action<MeshData> callback){
-        MeshData meshData = MeshGenerator.GenerateTerrainMesh(mapData.heightMap, heightMultiplier, meshHeightCurve, lod);
+        MeshData meshData = MeshGenerator.GenerateTerrainMesh(mapData.heightMap, waveHeightMultiplier, meshHeightCurve, lod);
 
         lock(meshDataThreadOutputQueue){
             meshDataThreadOutputQueue.Enqueue(new DataCallbackPair<MeshData>(callback, meshData));
@@ -134,25 +134,15 @@ public class SeaChunkDataController : MonoBehaviour
     // ============================================================================================
 
     void Update(){
-        offset -+ offsetSpeed * Time.deltaTime;
+        offset = offset + (offsetSpeed * Time.deltaTime);
 
         CheckThreadQueues();
     }
 
     // ================== Validations of Input code ============================
     void OnValidate() {
-        if(lacunarity < 1){
-            lacunarity = 1;
-        }
-        if(octaves < 1){
-            octaves = 1;
-        }
-
-        if(octaves < 0){
-            octaves = 0;
-        }
-        if(noiseScale <=0){
-            noiseScale = 0.0001f;
+        if(waveFrequency <=0){
+            waveFrequency = 0.0001f;
         }
 
     }

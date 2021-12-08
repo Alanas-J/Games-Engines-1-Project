@@ -8,8 +8,6 @@ public static class LandNoiseSource {
     public static float[,] GenerateNoiseMap(int mapWidth, int mapHeight, int seed, float scale, int octaves, float persistance, float lacunarity, Vector2 offset){
         float[,] noiseMap = new float[mapWidth, mapHeight];
 
-        Debug.Log("Generating with : " + offset);
-        
         System.Random randomNoGenerator = new System.Random(seed);
         
         // Parametres to ensure correct noisemap.

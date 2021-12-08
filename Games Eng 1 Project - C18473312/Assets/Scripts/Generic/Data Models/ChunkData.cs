@@ -10,4 +10,11 @@ public struct ChunkData {
         this.heightMap = heightMap;
         this.colourMap = colourMap;
     }
+
+    // Overload to contain no colour map for water optimisation
+    public ChunkData(float[,] heightMap) {
+        this.heightMap = heightMap;
+        this.colourMap = null;
+    }
+
 }

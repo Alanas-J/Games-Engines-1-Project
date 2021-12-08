@@ -31,7 +31,7 @@ public class SeaChunk {
 
             // Create the game object
             chunkObject = new GameObject("Sea Chunk");
-            meshRenderer = chunkObject.AddComponent<MeshRenderer>();;
+            meshRenderer = chunkObject.AddComponent<MeshRenderer>();
             meshFilter = chunkObject.AddComponent<MeshFilter>();
             meshRenderer.material = material;
 
@@ -54,12 +54,6 @@ public class SeaChunk {
         void OnChunkDataReceived(ChunkData chunkData){
             this.chunkData = chunkData;
             chunkDataReceived = true;
-
-            // Using for now expermentation
-            // Generates the texture for the terrain from the colour array. 
-            Texture2D texture = TextureGenerator.TextureFromColourArray(chunkData.colourMap, SeaChunkDataController.chunkSize, SeaChunkDataController.chunkSize);
-            meshRenderer.material.mainTexture = texture;
-            UpdateChunk();
         }
         // ========================================
         void OnMeshDataReceived(MeshData meshData){
@@ -69,21 +63,21 @@ public class SeaChunk {
 
         // =================== Chunk Update Logic ========================================
         public void UpdateChunk(){
+            
             if(chunkDataReceived){
-
                 // Check the postion of point to the chunk boundary.
                 float viewerDistanceFromEdge = Mathf.Sqrt(bounds.SqrDistance(SeaGenerator.viewerPosition));
-                bool visible = viewerDistanceFromEdge <= SeaGenerator.renderDistance;
+                bool visible = viewerDistanceFromEdge <= seaGenerator.renderDistance;
 
                 if(visible){
-                    // Async collection of mesh.( may swap if it looks unsyncronised)
-                    seaChunkDataController.RequestMeshData(chunkData, SeaGenerator.levelOfDetailDivider, OnMeshDataReceived);
-
-                    // Add to Sea generators list of visible chunks.
-                    SeaGenerator.visibleTerrainChunks.Add(this);
-                    SetVisible(visible);
+                    // Async methods
+                    seaChunkDataController.RequestChunkData(position, OnChunkDataReceived);
+                    seaChunkDataController.RequestMeshData(chunkData, seaGenerator.levelOfDetailDivider, OnMeshDataReceived);
                 }
             }
+            chunkDataReceived = false;
+            
+
         }
 
         public void SetVisible(bool visible){

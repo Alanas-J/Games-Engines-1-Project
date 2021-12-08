@@ -328,7 +328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1030896773
 AudioListener:
   m_ObjectHideFlags: 0
@@ -441,8 +441,8 @@ MonoBehaviour:
   viewer: {fileID: 990610577}
   mapMaterial: {fileID: 2100000, guid: c306b549d0ac0804eb115ae4c9020e6b, type: 2}
   renderDistanceLodLevels:
-  - lod: 2
-    visibleDstThresh: 500
+  - lod: 3
+    visibleDstThresh: 400
 --- !u!114 &1578876697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,13 +455,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b413fb2cb66592c4080e00b7a247ed15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noiseScale: 300.12
+  noiseScale: 308.29
   octaves: 3
   peristance: 0.459
   lacunarity: 1.15
   seed: 86
   offset: {x: 0, y: 0}
-  heightMultiplier: 10.96
+  heightMultiplier: 50
   meshHeightCurve:
     serializedVersion: 2
     m_Curve:
@@ -498,10 +498,10 @@ MonoBehaviour:
   terrainLayers:
   - name: Below Sea Level
     height: 0
-    colour: {r: 0.20784312, g: 0.78469574, b: 0.94509804, a: 0}
+    colour: {r: 0.90887654, g: 0.94509804, b: 0.20784312, a: 0}
   - name: Sand
     height: 0.8
-    colour: {r: 0.94509804, g: 0.8863251, b: 0.20784312, a: 0}
+    colour: {r: 0.909804, g: 0.9450981, b: 0.20784315, a: 0}
   - name: Grass
     height: 0.9
     colour: {r: 0.26541182, g: 0.94509804, b: 0.20784312, a: 0}
@@ -514,13 +514,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2060463620}
+  - component: {fileID: 2060463622}
+  - component: {fileID: 2060463621}
   m_Layer: 0
   m_Name: Sea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2060463620
 Transform:
   m_ObjectHideFlags: 0
@@ -529,9 +531,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060463619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -72.359436, y: -394.2265, z: 396.9938}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2060463621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060463619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c8ca2f3c264664d9598fbb0e0967b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewer: {fileID: 990610577}
+  mapMaterial: {fileID: 2100000, guid: e08e2ef2cc0f2bd4ea1131d76a7888f8, type: 2}
+  renderDistance: 150
+  levelOfDetailDivider: 24
+--- !u!114 &2060463622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060463619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b29eff0d67c53408d9e60200b67079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveFrequency: 30
+  offset: {x: 0, y: 0}
+  offsetSpeed: {x: 2, y: 1}
+  waveHeightMultiplier: 10

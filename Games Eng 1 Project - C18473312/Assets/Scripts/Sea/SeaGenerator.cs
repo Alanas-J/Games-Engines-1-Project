@@ -19,10 +19,10 @@ public class SeaGenerator : MonoBehaviour{
     
 
     // Render distance  
-    public static float renderDistance;
+    public float renderDistance = 600f;
 
     //Sea Level of detail factor
-    public static int levelOfDetailDivider = 12;
+    public int levelOfDetailDivider = 6;
 
     // ==================== Sea Generation Variables ===========================
 
@@ -42,22 +42,25 @@ public class SeaGenerator : MonoBehaviour{
         seaChunkDataController = FindObjectOfType<SeaChunkDataController>();
         
         chunkLength = SeaChunkDataController.chunkSize-1;
-        chunkCoordinateRenderDistance = Mathf.RoundToInt(renderDistance/chunkLength); // How many chunks are rendered in a direction from player.
+        chunkCoordinateRenderDistance = Mathf.RoundToInt(renderDistance/chunkLength/scale); // How many chunks are rendered in a direction from player.
 
-        UpdateVisibleChunks();
     }
 
+    float updateCounter = 0;
     void Update(){
         viewerPosition = new Vector2(viewer.position.x, viewer.position.z) /scale ;
 
-        /* Keeping this if I want to sync ocean visibility.
-        // This logic is kept to keep chunk tiles synced with terrain.
-        if((viewerPositionLastUpdate - viewerPosition).sqrMagnitude > sqrViewerMovementUpdateThreshold){
-            viewerPositionLastUpdate = viewerPosition;
+        // update throttler
+        updateCounter += Time.deltaTime*15;
+        if(updateCounter > 1){
             UpdateVisibleChunks();
-        }
-        */
-        UpdateVisibleChunks();
+            updateCounter = 0;
+
+            Debug.Log("Printing");
+        }  
+
+
+        
     }
 
     void UpdateVisibleChunks(){
@@ -83,6 +86,8 @@ public class SeaGenerator : MonoBehaviour{
                 } else{
 
                     SeaChunks[currentChunkCoordinate].UpdateChunk();
+                    SeaChunks[currentChunkCoordinate].SetVisible(true);
+                    visibleTerrainChunks.Add(SeaChunks[currentChunkCoordinate]);
                 }
             }
         }

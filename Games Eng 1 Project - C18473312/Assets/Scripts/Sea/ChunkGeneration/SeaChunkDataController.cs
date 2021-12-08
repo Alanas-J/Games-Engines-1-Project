@@ -17,43 +17,12 @@ public class SeaChunkDataController : MonoBehaviour
 
     public float waveHeightMultiplier; // amplitude
 
-
-    // keeping for later might experiement
-    public AnimationCurve meshHeightCurve; // Curve perlin input. Exactly like using colour curves for editing photos.
-
-    // Also keeping for experimentation
-    public TerrainLayer[] terrainLayers; // Used to colour map
-
-    [System.Serializable] // Makes Struct Visible to unity
-    public struct TerrainLayer {
-        public string name;
-        public float height;
-        public Color colour;
-    }
-
-
     // ================== Core Functionality Code =========================
     ChunkData GenerateChunkDataForPoint(Vector2 centre){
-        float[,] noiseMap = SeaNoiseSource.GenerateNoiseMap(chunkSize, chunkSize,  waveFrequency, centre+offset);
+        float[,] noiseMap = SeaNoiseSource.GenerateNoiseMap(chunkSize, chunkSize,  waveFrequency, new Vector2(centre.x+offset.x, centre.y + offset.y));
         //float[,] noiseMap = Noise.GenerateNoiseMap(chunkSize, chunkSize, seed, noiseScale, octaves, peristance, lacunarity, centre+offset, Noise.NormalizeMode.Global);
-        Color[] colourMap = new Color[chunkSize*chunkSize]; // Colours need to be stored in a 1D array;
         
-        for(int y = 0; y < chunkSize; y++){
-            for(int x = 0; x < chunkSize; x++){
-                float currentHeight = noiseMap[x,y];
-
-                // Cycle through all terrain height layers
-                for(int i = 0; i < terrainLayers.Length; i++){
-                    
-                    if(currentHeight >= terrainLayers[i].height){
-                        colourMap[y*chunkSize+ x] = terrainLayers[i].colour;
-                    } 
-                }
-            }
-        }
-
-        // Output is a map of values to create a mesh and texture from.
-        return new ChunkData(noiseMap,colourMap);
+        return new ChunkData(noiseMap);
     }
 
 
@@ -107,7 +76,7 @@ public class SeaChunkDataController : MonoBehaviour
         new Thread(threadStart).Start();
     }
     void MeshDataThread(ChunkData mapData,int lod, Action<MeshData> callback){
-        MeshData meshData = MeshGenerator.GenerateTerrainMesh(mapData.heightMap, waveHeightMultiplier, meshHeightCurve, lod);
+        MeshData meshData = MeshDataGenerator.GenerateChunkMesh(mapData.heightMap, waveHeightMultiplier, lod);
 
         lock(meshDataThreadOutputQueue){
             meshDataThreadOutputQueue.Enqueue(new DataCallbackPair<MeshData>(callback, meshData));

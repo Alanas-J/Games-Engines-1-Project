@@ -19,6 +19,7 @@ public class LandGenerator : MonoBehaviourMonoBehaviour {
 
     // This defines the render distance.    
     public LODThreshold[] renderDistanceLodLevels;
+    
     [System.Serializable]
     public struct LODThreshold{
         public int lod;
@@ -31,7 +32,7 @@ public class LandGenerator : MonoBehaviourMonoBehaviour {
     // User to keep a dictionary of all chunks generated ever, the key is coordinates.
     Dictionary<Vector2, LandChunk> LandChunks = new Dictionary<Vector2, LandChunk>();
     // List of visible terain chunks so they can be validated if they should be currently shown.
-    static List<LandChunk> previousVisibleTerainChunks = new List<LandChunk>();
+    static List<LandChunk> visibleTerrainChunks = new List<LandChunk>();
 
     static LandChunkDataGenerator landChunkDataGenerator; 
     int chunkLength;
@@ -64,10 +65,10 @@ public class LandGenerator : MonoBehaviourMonoBehaviour {
 
     void UpdateVisibleChunks(){
         // All previous chunks are set invisible.
-        for(int i = 0; i < previousVisibleTerainChunks.Count; i++){
-            previousVisibleTerainChunks[i].SetVisible(false);
+        for(int i = 0; i < visibleTerrainChunks.Count; i++){
+            visibleTerrainChunks[i].SetVisible(false);
         }
-        previousVisibleTerainChunks.Clear();
+        visibleTerrainChunks.Clear();
 
 
         // each chunkLength = 1 in chunk coordinates;
@@ -85,7 +86,7 @@ public class LandGenerator : MonoBehaviourMonoBehaviour {
                     LandChunks[currentChunkCoordinate].UpdateChunk();
                     
                 } else{
-                    LandChunks.Add(currentChunkCoordinate, new LandChunk(currentChunkCoordinate, chunkLength, detailLevels, transform, mapMaterial));
+                    LandChunks.Add(currentChunkCoordinate, new LandChunk(currentChunkCoordinate, chunkLength, scale, detailLevels, transform, mapMaterial ));
                 }
             }
         }

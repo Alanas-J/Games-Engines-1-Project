@@ -21,7 +21,7 @@ public static class SeaNoiseSource {
                 float sample_x = (x-halfWidth + offset.x)/scale;
                 float sample_y = (y+halfHeight  - offset.y)/scale;
 
-                noiseMap[x,y] = Mathf.PerlinNoise(sample_x,sample_y);
+                noiseMap[y,x] = Mathf.PerlinNoise(sample_x,sample_y);
             }
         }
         return noiseMap;

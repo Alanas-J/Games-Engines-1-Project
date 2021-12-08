@@ -7,7 +7,7 @@ using System.Threading;
 public class SeaChunkDataController : MonoBehaviour
 {
     // Constant Variables
-    public const int chunkSize = 241; // 241 vertices, making a 240 length piece.
+    public const int chunkSize = 257; // 241 vertices, making a 240 length piece.
 
     // Configurable Variables
     public float waveFrequency; // How much zoom into the noise map.

@@ -9,8 +9,11 @@ public class SeaChunk {
         GameObject chunkObject; 
 
         // Rendering Components
+        Terrain terrain;
+        int chunkLength;
         MeshRenderer meshRenderer; 
         MeshFilter meshFilter;
+
 
         // The real position of the chunk.
         Vector2 position; 
@@ -28,12 +31,22 @@ public class SeaChunk {
             // For pulling data from the managing generator.
             this.seaGenerator = seaGenerator;
             this.seaChunkDataController = seaChunkDataController;
+            
+            this.chunkLength = size;
 
             // Create the game object
             chunkObject = new GameObject("Sea Chunk");
-            meshRenderer = chunkObject.AddComponent<MeshRenderer>();
-            meshFilter = chunkObject.AddComponent<MeshFilter>();
-            meshRenderer.material = material;
+            //meshRenderer = chunkObject.AddComponent<MeshRenderer>();
+            //meshFilter = chunkObject.AddComponent<MeshFilter>();
+            terrain = chunkObject.AddComponent<Terrain>();
+            terrain.terrainData = new TerrainData();
+
+
+            terrain.terrainData.heightmapResolution = size+1;
+
+            // Mesh size specification
+            terrain.terrainData.size = new Vector3(size,  seaChunkDataController.waveHeightMultiplier, size);
+            terrain.materialTemplate = material;
 
             // Scale and postion
             position = chunkCoord * size; // position is scaled from chunk coordinates.
@@ -54,6 +67,8 @@ public class SeaChunk {
         void OnChunkDataReceived(ChunkData chunkData){
             this.chunkData = chunkData;
             chunkDataReceived = true;
+
+            terrain.terrainData.SetHeights(0,  0, chunkData.heightMap);
         }
         // ========================================
         void OnMeshDataReceived(MeshData meshData){
@@ -72,7 +87,7 @@ public class SeaChunk {
                 if(visible){
                     // Async methods
                     seaChunkDataController.RequestChunkData(position, OnChunkDataReceived);
-                    seaChunkDataController.RequestMeshData(chunkData, seaGenerator.levelOfDetailDivider, OnMeshDataReceived);
+                    //seaChunkDataController.RequestMeshData(chunkData, seaGenerator.levelOfDetailDivider, OnMeshDataReceived);
                 }
             }
             chunkDataReceived = false;

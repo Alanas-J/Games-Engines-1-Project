@@ -30,6 +30,7 @@ public class LandChunkDataGenerator : MonoBehaviour
 
     ChunkData GenerateChunkDataForPoint(Vector2 centre){
         float[,] noiseMap = LandNoiseSource.GenerateNoiseMap(chunkSize, chunkSize, seed, noiseScale, octaves, peristance, lacunarity, centre+offset);
+        //float[,] noiseMap = Noise.GenerateNoiseMap(chunkSize, chunkSize, seed, noiseScale, octaves, peristance, lacunarity, centre+offset, Noise.NormalizeMode.Global);
         Color[] colourMap = new Color[chunkSize*chunkSize]; // Colours need to be stored in a 1D array;
         
         for(int y = 0; y < chunkSize; y++){

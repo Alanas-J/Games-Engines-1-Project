@@ -4,16 +4,16 @@ using UnityEngine;
 
 // Used as the source of land terrain
 public static class LandNoiseSource {
-
-    static System.Random randomNoGenerator;
     
     public static float[,] GenerateNoiseMap(int mapWidth, int mapHeight, int seed, float scale, int octaves, float persistance, float lacunarity, Vector2 offset){
         float[,] noiseMap = new float[mapWidth, mapHeight];
+
+        Debug.Log("Generating with : " + offset);
         
-         randomNoGenerator = new System.Random(seed);
+        System.Random randomNoGenerator = new System.Random(seed);
         
         // Parametres to ensure correct noisemap.
-        Vector2[] randomOctaveOffsets = GetRandomOffsets(octaves, offset); // PseudoRandom offsets to sample different parts of perlin.
+        Vector2[] randomOctaveOffsets = GetRandomOffsets(octaves, randomNoGenerator); // PseudoRandom offsets to sample different parts of perlin.
         float maxPossibleHeight = GetPossibleHeightMax(octaves, persistance); // Getting height to normalize.
         
         // Vector given is in the centre of noisemap.
@@ -59,12 +59,12 @@ public static class LandNoiseSource {
         return noiseMap;
     }
 
-    private static Vector2[] GetRandomOffsets(int octaves, Vector2 offset) {
+    private static Vector2[] GetRandomOffsets(int octaves, System.Random randomNoGenerator) {
         Vector2[] randomOctaveOffsets = new Vector2[octaves];
 
         for(int i = 0 ; i < octaves; i++ ){
-            float offsetX = randomNoGenerator.Next(-100000,100000) + offset.x;
-            float offsetY = randomNoGenerator.Next(-100000,100000) - offset.y;
+            float offsetX = randomNoGenerator.Next(-100000,100000);
+            float offsetY = randomNoGenerator.Next(-100000,100000);
             randomOctaveOffsets[i] = new Vector2(offsetX, offsetY);
         }
         return randomOctaveOffsets;

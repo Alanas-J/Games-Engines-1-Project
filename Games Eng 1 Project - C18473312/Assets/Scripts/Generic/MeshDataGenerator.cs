@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class MeshGenerator {
-
+public static class MeshDataGenerator {
+    
+    // Takes in a heightmap, amplitude multiplier, height curve and Lod divider
     public static MeshData GenerateChunkMesh(float[,] heightMap, float heightMultiplier, AnimationCurve _heightCurve, int levelOfDetail) {
         
         // ================= Parametres ======================
@@ -20,7 +21,7 @@ public static class MeshGenerator {
         // LOD values are mapped to 1, 2, 4, 6, 8, 10, 12. Factors of 240.
         int verticeReductionRatio = levelOfDetail == 0 ? 1 : levelOfDetail * 2;
 
-        int verticesPerLineX = ((width-1)/verticeReductionRatio) + 1;
+        int verticesPerLine = ((width-1)/verticeReductionRatio) + 1;
         //  eg. 5 point square is of 4 vertice length, divided by 2 its 2, to make a 2 length line +1 vertice is needed .
         // ====================================================
 

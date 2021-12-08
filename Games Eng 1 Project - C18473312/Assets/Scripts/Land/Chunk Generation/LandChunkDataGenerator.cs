@@ -37,10 +37,10 @@ public class LandChunkDataGenerator : MonoBehaviour
                 float currentHeight = noiseMap[x,y];
 
                 // Cycle through all terrain height layers
-                for(int i = 0; i<layers.Length; i++){
+                for(int i = 0; i < terrainLayers.Length; i++){
                     
-                    if(currentHeight >= layers[i].height){
-                        colourMap[y*chunkSize+ x] = layers[i].colour;
+                    if(currentHeight >= terrainLayers[i].height){
+                        colourMap[y*chunkSize+ x] = terrainLayers[i].colour;
                     } 
                 }
             }
@@ -60,7 +60,7 @@ public class LandChunkDataGenerator : MonoBehaviour
     // ================== Multithreading code ============================
 
     // Thread Queues
-    Queue<DataCallbackPair<ChunkData>> chunkDataThreadOutputQueue = new Queue<DataCallbackPair<MapData>>(); 
+    Queue<DataCallbackPair<ChunkData>> chunkDataThreadOutputQueue = new Queue<DataCallbackPair<ChunkData>>(); 
     Queue<DataCallbackPair<MeshData>> meshDataThreadOutputQueue = new Queue<DataCallbackPair<MeshData>>();
 
     public struct DataCallbackPair<T>{
@@ -82,24 +82,26 @@ public class LandChunkDataGenerator : MonoBehaviour
     */
     public void RequestChunkData(Vector2 centre, Action<ChunkData> callback){
         ThreadStart threadStart = delegate{
-            MapDataThread(centre, callback);};
+            ChunkDataRequestThread(centre, callback);
+        };
         new Thread(threadStart).Start();
     }
     void ChunkDataRequestThread(Vector2 centre, Action<ChunkData> callback){
-        ChunkData chunkData = GenerateChunkData(centre);
+        ChunkData chunkData = GenerateChunkDataForPoint(centre);
 
-        lock(mapDataThreadOutputQueue){
-            chunkDataThreadOutputQueue.Enqueue(new DataCallbackPair<ChunkData>(callback, mapData));
+        lock(chunkDataThreadOutputQueue){
+            chunkDataThreadOutputQueue.Enqueue(new DataCallbackPair<ChunkData>(callback, chunkData));
         }
     }
     
     public void RequestMeshData(ChunkData mapData, int lod, Action<MeshData> callback){
         ThreadStart threadStart = delegate{
-            MeshDataThread(mapData, lod,  callback);};
+            MeshDataThread(mapData, lod,  callback);
+        };
         new Thread(threadStart).Start();
     }
-    void MeshDataThread(MapData mapData,int lod, Action<MeshData> callback){
-        MeshData meshData = MeshGenerator.GenerateTerrainMesh(mapData.heightMap, meshHeightMultiplier, meshHeightCurve, lod);
+    void MeshDataThread(ChunkData mapData,int lod, Action<MeshData> callback){
+        MeshData meshData = MeshGenerator.GenerateTerrainMesh(mapData.heightMap, heightMultiplier, meshHeightCurve, lod);
 
         lock(meshDataThreadOutputQueue){
             meshDataThreadOutputQueue.Enqueue(new DataCallbackPair<MeshData>(callback, meshData));

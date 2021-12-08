@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LandGenerator : MonoBehaviourMonoBehaviour {
+public class LandGenerator : MonoBehaviour {
     
     // ========================= Parametres =================================
     const float scale = 1f;
@@ -17,15 +17,9 @@ public class LandGenerator : MonoBehaviourMonoBehaviour {
     public Transform viewer;
     public Material mapMaterial;
 
-    // This defines the render distance.    
+    // Last lod element defines the render distance.    
     public LODThreshold[] renderDistanceLodLevels;
-    
-    [System.Serializable]
-    public struct LODThreshold{
-        public int lod;
-        public float visibleDstThresh;
-    }  
-    
+    float renderDistance;
 
     // ==================== Land Generation Variables ===========================
 
@@ -47,7 +41,7 @@ public class LandGenerator : MonoBehaviourMonoBehaviour {
         // The last lod level is used as the render distance.
         renderDistance = renderDistanceLodLevels[(renderDistanceLodLevels.Length-1)].visibleDstThresh;
 
-        chunkLength = LandChunkDataGenerator.mapchunkLength-1;
+        chunkLength = LandChunkDataGenerator.chunkSize-1;
         chunkCoordinateRenderDistance = Mathf.RoundToInt(renderDistance/chunkLength); // How many chunks are rendered in a direction from player.
 
         UpdateVisibleChunks();
@@ -57,8 +51,8 @@ public class LandGenerator : MonoBehaviourMonoBehaviour {
         viewerPosition = new Vector2(viewer.position.x, viewer.position.z) /scale ;
 
         // Pythagoras to check if chunk update threshold is hit.
-        if((viewerPositionPrevUpdate-viewerPosition).sqrMagnitude > sqrViewerMovementUpdateThreshold){
-            viewerPositionPrevUpdate = viewerPosition;
+        if((viewerPositionLastUpdate - viewerPosition).sqrMagnitude > sqrViewerMovementUpdateThreshold){
+            viewerPositionLastUpdate = viewerPosition;
             UpdateVisibleChunks();
         }
     }
@@ -86,7 +80,7 @@ public class LandGenerator : MonoBehaviourMonoBehaviour {
                     LandChunks[currentChunkCoordinate].UpdateChunk();
                     
                 } else{
-                    LandChunks.Add(currentChunkCoordinate, new LandChunk(currentChunkCoordinate, chunkLength, scale, detailLevels, transform, mapMaterial ));
+                    LandChunks.Add(currentChunkCoordinate, new LandChunk(currentChunkCoordinate, chunkLength, scale, renderDistanceLodLevels, transform, this, landChunkDataGenerator, mapMaterial  ));
                 }
             }
         }

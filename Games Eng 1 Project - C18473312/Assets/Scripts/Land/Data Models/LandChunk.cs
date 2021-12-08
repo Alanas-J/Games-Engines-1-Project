@@ -24,7 +24,7 @@ public class LandChunk {
         int previousLODIndex = -1; // Used to see if the same lod mesh was used last update
 
         // ================================== Constructor =========================================================
-        public TerrainChunk(Vector2 chunkCoord, int size, float scale, LODThreshold[] detailLevelThresholds, Transform parentObject, LandGenerator landGenerator, LandChunkDataGenerator landChunkDataGenerator, Material material) {
+        public LandChunk(Vector2 chunkCoord, int size, float scale, LODThreshold[] detailLevelThresholds, Transform parentObject, LandGenerator landGenerator, LandChunkDataGenerator landChunkDataGenerator, Material material) {
 
             // Create the game object
             chunkObject = new GameObject("Land Chunk");

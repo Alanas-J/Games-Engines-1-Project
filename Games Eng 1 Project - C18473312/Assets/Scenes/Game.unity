@@ -226,11 +226,10 @@ GameObject:
   m_Component:
   - component: {fileID: 839077810}
   - component: {fileID: 839077809}
-  - component: {fileID: 839077808}
   - component: {fileID: 839077807}
   - component: {fileID: 839077806}
   m_Layer: 0
-  m_Name: Ocean
+  m_Name: Sea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,12 +244,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 839077805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab2002b22e2394438bd48f18141e37b, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d478f56f93a5d41a7c9ce0dcfd7387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrain_width: 2048
-  terrain_depth: 2048
-  terrain_scale: 10
+  tileWidth: 2048
+  heightMapResolution: 0
+  oceanFrameRate: 30
 --- !u!114 &839077807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,25 +259,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 839077805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8770a086618fb2c4985381d82e285f87, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ac37624ad9fa174ca72d207821be0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 20
-  wave_scale: 50
-  offset_x: 0
-  offset_y: 0
-  speed: 0.1
---- !u!154 &839077808
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839077805}
-  m_Material: {fileID: 0}
-  m_Enabled: 0
-  m_TerrainData: {fileID: 15600000, guid: 4ddfaacb280314a45bfd1884c44ec660, type: 2}
-  m_EnableTreeColliders: 1
+  seaOffset: {x: 0, y: 0}
+  seaSpeed: {x: 0.34, y: 0}
+  waveWidth: 10
+  maxWaveHeight: 20
+  minWaveHeight: 50
 --- !u!218 &839077809
 Terrain:
   m_ObjectHideFlags: 0
@@ -552,7 +540,7 @@ MonoBehaviour:
   mapMaterial: {fileID: 2100000, guid: c306b549d0ac0804eb115ae4c9020e6b, type: 2}
   renderDistanceLodLevels:
   - lod: 3
-    visibleDstThresh: 500.9
+    visibleDstThresh: 1000
 --- !u!114 &1578876697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,37 +555,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noiseScale: 401.16
   octaves: 3
-  peristance: 0.459
+  peristance: 0.48
   lacunarity: 1.15
-  seed: 86
+  seed: 67
   offset: {x: 0, y: 0}
-  heightMultiplier: 30
+  heightMultiplier: 200
   meshHeightCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.14746425
-      value: -2.4111347
-      inSlope: 3.3650708
-      outSlope: 3.3650708
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.8063873
-      value: 0.7986433
-      inSlope: 5.43666
-      outSlope: 5.43666
+      time: 0
+      value: 0
+      inSlope: 0.39244613
+      outSlope: 0.39244613
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.023422096
+      inWeight: 0
+      outWeight: 0.119029656
+    - serializedVersion: 3
+      time: 0.76508266
+      value: 0.38229778
+      inSlope: 1.7305151
+      outSlope: 1.7305151
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04208903
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.0974579
-      value: 2.8603745
-      inSlope: 7.0832686
-      outSlope: 7.0832686
+      time: 1.023119
+      value: 1.0126204
+      inSlope: 2.4427674
+      outSlope: 2.4427674
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -627,7 +615,7 @@ GameObject:
   - component: {fileID: 2060463622}
   - component: {fileID: 2060463621}
   m_Layer: 0
-  m_Name: Sea
+  m_Name: SeaOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

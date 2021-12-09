@@ -50,7 +50,7 @@ public static class LandNoiseSource {
 
                 // Number is pushed into positives and divided by 2*heightmax to get perfect normalization.
                 // But max possible height is divided to spread more values into 0-1 range
-                float normalizedHeight = (noiseMap[x,y] +1)/(2f *maxPossibleHeight/ 2f);
+                float normalizedHeight = (noiseMap[x,y] +1)/(2f *maxPossibleHeight/ 1.5f);
                     noiseMap[x, y] = Mathf.Clamp(normalizedHeight, 0, int.MaxValue); // Clamp on 0 to ensure no negatives.
                 }
         }    

@@ -216,6 +216,116 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &839077805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839077810}
+  - component: {fileID: 839077809}
+  - component: {fileID: 839077808}
+  - component: {fileID: 839077807}
+  - component: {fileID: 839077806}
+  m_Layer: 0
+  m_Name: Ocean
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &839077806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839077805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab2002b22e2394438bd48f18141e37b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain_width: 2048
+  terrain_depth: 2048
+  terrain_scale: 10
+--- !u!114 &839077807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839077805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8770a086618fb2c4985381d82e285f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 20
+  wave_scale: 50
+  offset_x: 0
+  offset_y: 0
+  speed: 0.1
+--- !u!154 &839077808
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839077805}
+  m_Material: {fileID: 0}
+  m_Enabled: 0
+  m_TerrainData: {fileID: 15600000, guid: 4ddfaacb280314a45bfd1884c44ec660, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &839077809
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839077805}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 4ddfaacb280314a45bfd1884c44ec660, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: e08e2ef2cc0f2bd4ea1131d76a7888f8, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &839077810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839077805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -256, y: 0, z: -256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990610573
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +552,7 @@ MonoBehaviour:
   mapMaterial: {fileID: 2100000, guid: c306b549d0ac0804eb115ae4c9020e6b, type: 2}
   renderDistanceLodLevels:
   - lod: 3
-    visibleDstThresh: 300
+    visibleDstThresh: 500.9
 --- !u!114 &1578876697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b413fb2cb66592c4080e00b7a247ed15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noiseScale: 308.29
+  noiseScale: 401.16
   octaves: 3
   peristance: 0.459
   lacunarity: 1.15
@@ -466,10 +576,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.029166667
-      value: -0.3016835
-      inSlope: 1.316883
-      outSlope: 1.316883
+      time: -0.14746425
+      value: -2.4111347
+      inSlope: 3.3650708
+      outSlope: 3.3650708
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -484,10 +594,10 @@ MonoBehaviour:
       inWeight: 0.023422096
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.9208374
-      value: 1.1272736
-      inSlope: 2.8713849
-      outSlope: 2.8713849
+      time: 1.0974579
+      value: 2.8603745
+      inSlope: 7.0832686
+      outSlope: 7.0832686
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -498,13 +608,13 @@ MonoBehaviour:
   terrainLayers:
   - name: Below Sea Level
     height: 0
-    colour: {r: 0.90887654, g: 0.94509804, b: 0.20784312, a: 0}
+    colour: {r: 0.9450981, g: 0.7294118, b: 0.20784315, a: 0}
   - name: Sand
-    height: 0.8
-    colour: {r: 0.909804, g: 0.9450981, b: 0.20784315, a: 0}
+    height: 0.71
+    colour: {r: 0.94509804, g: 0.73039675, b: 0.20784312, a: 0}
   - name: Grass
-    height: 0.9
-    colour: {r: 0.26541182, g: 0.94509804, b: 0.20784312, a: 0}
+    height: 0.8
+    colour: {r: 0.14310075, g: 0.3773585, b: 0.12993948, a: 0}
 --- !u!1 &2060463619
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2060463620
 Transform:
   m_ObjectHideFlags: 0
@@ -531,7 +641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060463619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -551,7 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewer: {fileID: 990610577}
   mapMaterial: {fileID: 2100000, guid: e08e2ef2cc0f2bd4ea1131d76a7888f8, type: 2}
-  renderDistance: 300
+  renderDistance: 400
   levelOfDetailDivider: 24
 --- !u!114 &2060463622
 MonoBehaviour:
@@ -565,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b29eff0d67c53408d9e60200b67079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveFrequency: 30
+  waveFrequency: 110.6
   offset: {x: 0, y: 0}
   offsetSpeed: {x: 2, y: 1}
   waveHeightMultiplier: 20

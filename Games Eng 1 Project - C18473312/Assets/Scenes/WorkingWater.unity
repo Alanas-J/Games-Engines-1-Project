@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab2002b22e2394438bd48f18141e37b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrain_width: 500
+  terrain_width: 256
   terrain_depth: 256
   terrain_scale: 10
 --- !u!154 &1079288331

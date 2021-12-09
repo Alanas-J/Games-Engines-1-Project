@@ -11,7 +11,7 @@ public class LandGenerator : MonoBehaviour {
     const float viewerMovementUpdateThreshold = 25f;
     const float sqrViewerMovementUpdateThreshold = viewerMovementUpdateThreshold * viewerMovementUpdateThreshold;
     public static Vector2 viewerPosition;
-    static Vector2 viewerPositionLastUpdate;
+    public static Vector2 viewerPositionLastUpdate;
 
     // Inputs ===========
     public Transform viewer;

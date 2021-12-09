@@ -5,16 +5,16 @@ using UnityEngine;
 public class SeaObjectController : MonoBehaviour {
     
     // User inputs =========================   
-    public static int tileWidth = 2048;
-    public HeightMapResoluion heightMapResoluion;
+    public int tileWidth = 2048;
+    public HeightMapResolution heightMapResolution;
     public float oceanFrameRate = 30;
 
-    public enum HeightMapResoluion{ x129, x256, x512, x1024, x2048} 
+    public enum HeightMapResolution{ x129, x256, x512, x1024, x2048} 
 
     // Inner Variables ================
-    Vector2 fromCornerToCentre = new Vector2(-tileWidth/2, -tileWidth/2);  // Transform needed to centre the sea tile
+    Vector2 fromCornerToCentre; // Used to get center of mesh.
     Terrain seaTerrain;
-    int heightMapResoluionInt;
+    int heightMapResolutionInt;
     float[,] heightMap;
     float terrainMaxHeight;
     
@@ -24,8 +24,9 @@ public class SeaObjectController : MonoBehaviour {
 
     // ========================== Lifecycle methods =============================
     void Start(){
-        // Centering the water
-        transform.position = new Vector3(fromCornerToCentre.x, 0, fromCornerToCentre.y);
+        // Centering the water and raising sea level
+        fromCornerToCentre = new Vector2(-tileWidth/2, -tileWidth/2);  // Transform needed to centre the sea tile
+        transform.position = new Vector3(fromCornerToCentre.x, SeaManager.instance.minWaveHeight, fromCornerToCentre.y);
 
         seaTerrain = GetComponent<Terrain>();
     }
@@ -54,35 +55,35 @@ public class SeaObjectController : MonoBehaviour {
             viewerLastPostition = LandGenerator.viewerPositionLastUpdate;
 
             Vector2 translationVector2 = viewerLastPostition+ fromCornerToCentre;
-            transform.position = new Vector3(translationVector2.x, 0, translationVector2.y);
+            transform.position = new Vector3(translationVector2.x, SeaManager.instance.minWaveHeight, translationVector2.y);
         }
     }
 
     // Fetch and use height data from 
     void UpdateTerrainMesh(){
         // Heightmap value from enum.
-        switch(heightMapResoluion){
-            case HeightMapResoluion.x129:
-                heightMapResoluionInt = 129;
+        switch(heightMapResolution){
+            case HeightMapResolution.x129:
+                heightMapResolutionInt = 129;
                 break;
-            case HeightMapResoluion.x256:
-                heightMapResoluionInt = 256;
+            case HeightMapResolution.x256:
+                heightMapResolutionInt = 256;
                 break;
-            case HeightMapResoluion.x512:
-                heightMapResoluionInt = 512;
+            case HeightMapResolution.x512:
+                heightMapResolutionInt = 512;
                 break;
-            case HeightMapResoluion.x1024:
-                heightMapResoluionInt = 1024;
+            case HeightMapResolution.x1024:
+                heightMapResolutionInt = 1024;
                 break;     
-            case HeightMapResoluion.x2048:
-                heightMapResoluionInt = 2048;
+            case HeightMapResolution.x2048:
+                heightMapResolutionInt = 2048;
                 break;            
         }    
-        seaTerrain.terrainData.heightMapResoluion = heightMapResoluionInt;
+        seaTerrain.terrainData.heightmapResolution = heightMapResolutionInt;
 
         // Calls to singleton sea manager to get heightmap data.
-        heightMap = SeaManager.instance.GetSeaHeightMap(transform.position, tileWidth, heightMapResoluionInt);
-        terrainMaxHeight = SeaManager.instance.waveHeight;
+        heightMap = SeaManager.instance.GetNormalizedHeightMap(transform.position, tileWidth, heightMapResolutionInt);
+        terrainMaxHeight = SeaManager.instance.maxWaveHeight;
 
         // Size of the terrain mesh
         seaTerrain.terrainData.size = new Vector3(tileWidth, terrainMaxHeight, tileWidth);

@@ -11,7 +11,7 @@ public class ObjectInteraction : MonoBehaviour {
     public LayerMask interractAbleObjectMask;
 
     // Script scope variables
-    UnityEvent onInterract;
+    UnityEvent onInteract;
 
     // Lifecycle methods ====================================================================
     void Start()
@@ -28,7 +28,19 @@ public class ObjectInteraction : MonoBehaviour {
 
             Debug.Log(hit.collider.name);
 
-            if(hit.collider.GetComponent<Interactable>)
+            // If collider collides with a object containing an Interractable component.
+            if(hit.collider.GetComponent<Interactable>() != null){
+
+                // Store the onInteract event from the intractable object.
+                onInteract = hit.collider.GetComponent<Interactable>().onInteract;
+
+                // If E is pressed
+                if(Input.GetKeyDown(KeyCode.E)){
+                    
+                    // Invoke.
+                    onInteract.Invoke();
+                }
+            }
         }
 
     }

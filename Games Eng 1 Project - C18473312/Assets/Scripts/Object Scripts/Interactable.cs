@@ -5,18 +5,13 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour{
 
+    // Added to any interractable object, contains the following params :
     public UnityEvent onInteract;
+    public int id;
+    public string interactionText;
 
-
-
-    void Start()
-    {
-        
+    void Start(){
+        id = Random.Range(0,99999); // random id if not assigned from editor.
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

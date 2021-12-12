@@ -13,8 +13,8 @@ public class ShipController : MonoBehaviour{
 
     // Objects that need disabling for control.
     public ObjectInteraction objectInterractionComponent;
-    public CharacterController characterController;
-    public CharacterControllerPlayerMovement characterControllerScript;
+    public Rigidbody characterRigidbody;
+    public RigidbodyPlayerMovement RigidbodyMovementScript;
 
 
     // Private variables =========
@@ -29,6 +29,9 @@ public class ShipController : MonoBehaviour{
     private float maxSailSize = 20f; // How long extended sails are
     private float minSailSize = 2f; // how long retracted sails are.
 
+    private bool isSteering = false; // state of controller.
+    private bool keyWasUp; // fix to ensure controller doesnt instantly exit steering.
+
     // ================= Lifecycle methods =================================
     void Start() {
         steeringWheel = GameObject.FindWithTag("Ship Steering Wheel"); // I tagged the steering wheel to access for rotation.
@@ -40,17 +43,22 @@ public class ShipController : MonoBehaviour{
 
 
     void Update() {
-        // Prompt to ensure player knows how to exit steering.
-        PlayerGUIText.AddString("Press E to exit steering.");
-        if(Input.GetKeyDown(KeyCode.E)){
-            SteerShip(false);
+        
+        // if steering ship.
+        if(isSteering){
+            if(Input.GetKeyUp(KeyCode.E)) // fix to ensure player doesnt instantly exit.
+                keyWasUp = true;
+
+            // Prompt to ensure player knows how to exit steering.
+            PlayerGUIText.AddString("Press E to exit steering.");
+            if(Input.GetKeyDown(KeyCode.E) && keyWasUp){
+                SteerShip(false);
+            }
+
+            // Input
+            sailState += Input.GetAxis("Vertical") * sailControlSpeed * Time.deltaTime;
+            wheelRotation -= Input.GetAxis("Horizontal") * steeringSpeed * Time.deltaTime;
         }
-
-        // Input
-        sailState += Input.GetAxis("Vertical") * sailControlSpeed * Time.deltaTime;
-        wheelRotation -= Input.GetAxis("Horizontal") * steeringSpeed * Time.deltaTime;
-
-
 
         // Set wheel state
         wheelRotation = Mathf.Clamp(wheelRotation, -wheelMaxRotation, wheelMaxRotation);
@@ -62,20 +70,21 @@ public class ShipController : MonoBehaviour{
         sails.transform.localPosition = new Vector3(-1, -sailState/2 + 30, 2.68f); // adjust placement of sails to scale.
 
 
-
-
-        ApplyShipDriving();
-        // Ship physics method will go here =========
+        ApplyShipDriving(); // Applies driving physics.
     }
 
     // ===================================================================
 
     // Used to dictate if component is being steered.
     public void SteerShip(bool steering) {
-        this.enabled = steering;
+
+        isSteering = steering; // enable disable inputs.
+        keyWasUp = false;
+
+        // Disable if steering all character controlls.
+        RigidbodyMovementScript.enabled = !steering;
         objectInterractionComponent.enabled = !steering;
-        characterController.enabled = !steering;
-        characterControllerScript.enabled = !steering;
+
     }
 
 

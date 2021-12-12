@@ -135,7 +135,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239255326}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6c2e0c7460258c46904c1aa3c485b7d, type: 3}
   m_Name: 
@@ -145,8 +145,8 @@ MonoBehaviour:
   sailControlSpeed: 20
   steeringSpeed: 80
   objectInterractionComponent: {fileID: 1931346228}
-  characterController: {fileID: 1279552568}
-  characterControllerScript: {fileID: 1279552567}
+  characterRigidbody: {fileID: 1227838094}
+  RigidbodyMovementScript: {fileID: 1227838093}
 --- !u!1 &362674557
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,21 +915,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1279552567 stripped
+--- !u!114 &1227838093 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6697610476010178202, guid: 4a09ed29be26c1449865b1fda57f8cf0, type: 3}
-  m_PrefabInstance: {fileID: 762097328}
+  m_CorrespondingSourceObject: {fileID: 9046490540988437591, guid: 0925e25fa8e6d0d46a90ba87d7cbe6ab, type: 3}
+  m_PrefabInstance: {fileID: 1374786915}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f383065b99e5fa640ba8a879a54a5e09, type: 3}
+  m_Script: {fileID: 11500000, guid: da29edcfb4c69484e9633c8cc97555ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!143 &1279552568 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 6697610476010178204, guid: 4a09ed29be26c1449865b1fda57f8cf0, type: 3}
-  m_PrefabInstance: {fileID: 762097328}
+--- !u!54 &1227838094 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 9046490540988437585, guid: 0925e25fa8e6d0d46a90ba87d7cbe6ab, type: 3}
+  m_PrefabInstance: {fileID: 1374786915}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1374786915
 PrefabInstance:
@@ -952,7 +952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9046490540988437590, guid: 0925e25fa8e6d0d46a90ba87d7cbe6ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.06
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 9046490540988437590, guid: 0925e25fa8e6d0d46a90ba87d7cbe6ab, type: 3}
       propertyPath: m_LocalPosition.z

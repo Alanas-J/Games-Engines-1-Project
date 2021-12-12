@@ -13,8 +13,8 @@ public class ShipController : MonoBehaviour{
 
     // Objects that need disabling for control.
     public ObjectInteraction objectInterractionComponent;
-    public Rigidbody characterRigidbody;
-    public RigidbodyPlayerMovement RigidbodyMovementScript;
+    public CharacterController playerCharacterController;
+    public CharacterControllerPlayerMovement characterControllerMovementScript;
 
 
     // Private variables =========
@@ -82,7 +82,8 @@ public class ShipController : MonoBehaviour{
         keyWasUp = false;
 
         // Disable if steering all character controlls.
-        RigidbodyMovementScript.enabled = !steering;
+        //playerCharacterController.enabled = !steering;
+        characterControllerMovementScript.enabled = !steering;
         objectInterractionComponent.enabled = !steering;
 
     }

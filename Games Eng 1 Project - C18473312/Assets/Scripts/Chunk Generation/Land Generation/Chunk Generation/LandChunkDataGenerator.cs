@@ -102,7 +102,7 @@ public class LandChunkDataGenerator : MonoBehaviour
         new Thread(threadStart).Start();
     }
     void MeshDataThread(ChunkData mapData,int lod, Action<MeshData> callback){
-        MeshData meshData = MeshGenerator.GenerateTerrainMesh(mapData.heightMap, heightMultiplier, meshHeightCurve, lod);
+        MeshData meshData = MeshDataGenerator.GenerateChunkMesh(mapData.heightMap, heightMultiplier, meshHeightCurve, lod);
 
         lock(meshDataThreadOutputQueue){
             meshDataThreadOutputQueue.Enqueue(new DataCallbackPair<MeshData>(callback, meshData));

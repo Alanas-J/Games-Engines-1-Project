@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 661493616993135800}
   depthBeforeMaximumUpPull: 8
-  strengthOfUpPull: 1.4
+  strengthOfUpPull: 1.8
   waterDrag: 4
   waterAngularDrag: 4
   floaterCount: 7
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 661493616993135800}
   depthBeforeMaximumUpPull: 8
-  strengthOfUpPull: 1.4
+  strengthOfUpPull: 1.8
   waterDrag: 4
   waterAngularDrag: 4
   floaterCount: 7
@@ -601,7 +601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804712841027921743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 5.5, z: -47.69}
+  m_LocalPosition: {x: -1, y: 5.5, z: -47}
   m_LocalScale: {x: 23, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 2529510351567365973}
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 661493616993135800}
   depthBeforeMaximumUpPull: 8
-  strengthOfUpPull: 1.4
+  strengthOfUpPull: 1.8
   waterDrag: 4
   waterAngularDrag: 4
   floaterCount: 7
@@ -1386,7 +1386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3893486548724804849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: 5.4399996, z: -37.5}
+  m_LocalPosition: {x: -12, y: 5.5, z: -37.5}
   m_LocalScale: {x: 1, y: 5, z: 20}
   m_Children: []
   m_Father: {fileID: 2529510351567365973}
@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 661493616993135800}
   depthBeforeMaximumUpPull: 8
-  strengthOfUpPull: 1.4
+  strengthOfUpPull: 1.8
   waterDrag: 4
   waterAngularDrag: 4
   floaterCount: 7
@@ -2182,7 +2182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5364621745471276831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 5.4399996, z: -37.5}
+  m_LocalPosition: {x: 10, y: 5.5, z: -37.5}
   m_LocalScale: {x: 1, y: 5, z: 20}
   m_Children: []
   m_Father: {fileID: 2529510351567365973}
@@ -2887,7 +2887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 661493616993135800}
   depthBeforeMaximumUpPull: 8
-  strengthOfUpPull: 1.4
+  strengthOfUpPull: 1.8
   waterDrag: 4
   waterAngularDrag: 4
   floaterCount: 7
@@ -3540,7 +3540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 661493616993135800}
   depthBeforeMaximumUpPull: 8
-  strengthOfUpPull: 1.4
+  strengthOfUpPull: 1.8
   waterDrag: 4
   waterAngularDrag: 4
   floaterCount: 7

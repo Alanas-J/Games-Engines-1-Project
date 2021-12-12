@@ -50,7 +50,7 @@ public class ShipController : MonoBehaviour{
                 keyWasUp = true;
 
             // Prompt to ensure player knows how to exit steering.
-            PlayerGUIText.AddString("Press E to exit steering.");
+            PlayerGUIText.AddString("Press E to exit steering");
             if(Input.GetKeyDown(KeyCode.E) && keyWasUp){
                 SteerShip(false);
             }

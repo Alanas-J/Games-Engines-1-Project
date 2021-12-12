@@ -15,19 +15,11 @@ public class ObjectInteraction : MonoBehaviour {
     Interactable interactableObject;
 
     // Lifecycle methods ====================================================================
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         RaycastHit hit;
 
         if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interractionDistance, interractAbleObjectMask)) {
 
-            Debug.Log(hit.collider.name);
 
             // If collider collides with a object containing an Interractable component.
             if(hit.collider.GetComponent<Interactable>() != null){

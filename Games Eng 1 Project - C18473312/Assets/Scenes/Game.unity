@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c2e0c7460258c46904c1aa3c485b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 1000
-  shipRotationSpeed: 10
+  shipSpeed: 4000
+  shipRotationSpeed: 30
   sailControlSpeed: 20
   steeringSpeed: 80
   objectInterractionComponent: {fileID: 1931346228}
@@ -249,7 +249,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 2
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
@@ -305,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 2
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
@@ -369,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 2
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
@@ -413,7 +413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789216873358823130, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.9
+      value: 40.9
       objectReference: {fileID: 0}
     - target: {fileID: 5789216873358823130, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -449,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 2
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -457,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 2
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
@@ -505,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 2
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -513,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 839077809}
   - component: {fileID: 839077807}
   - component: {fileID: 839077806}
+  - component: {fileID: 839077808}
   m_Layer: 0
   m_Name: Sea
   m_TagString: Untagged
@@ -687,6 +688,102 @@ MonoBehaviour:
   waveWidth: 90.31
   maxWaveHeight: 20
   minWaveHeight: 50
+--- !u!82 &839077808
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839077805}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: caa2e57b2725ecc418cd0b713f6aa246, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8a9b00496703b7845b08bdb97c1ecb1e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.438
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!218 &839077809
 Terrain:
   m_ObjectHideFlags: 0

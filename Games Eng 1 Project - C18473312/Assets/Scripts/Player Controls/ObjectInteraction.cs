@@ -9,7 +9,6 @@ public class ObjectInteraction : MonoBehaviour {
     // Input variables
     public float interractionDistance = 2f;
     public LayerMask interractAbleObjectMask;
-    public Image interactImage;
 
     // Script scope variables
     Interactable interactableObject;

@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c2e0c7460258c46904c1aa3c485b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 10
-  shipRotationSpeed: 10
+  shipSpeed: 300
+  shipRotationSpeed: 1
   sailControlSpeed: 20
   steeringSpeed: 80
   objectInterractionComponent: {fileID: 1931346228}

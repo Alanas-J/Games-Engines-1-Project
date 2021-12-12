@@ -24,6 +24,7 @@ public class ShipController : MonoBehaviour{
 
 
     private float wheelRotation = 0;
+    private float wheelMaxRotation = 450f; // 360 and 90 degrees to each side.
     private float sailState = 0f;
     private float maxSailSize = 20f; // How long extended sails are
     private float minSailSize = 2f; // how long retracted sails are.
@@ -52,7 +53,7 @@ public class ShipController : MonoBehaviour{
 
 
         // Set wheel state
-        wheelRotation = Mathf.Clamp(wheelRotation, -450f, 450f);
+        wheelRotation = Mathf.Clamp(wheelRotation, -wheelMaxRotation, wheelMaxRotation);
         steeringWheel.transform.localRotation = Quaternion.Euler(0, 0, wheelRotation);
 
         // Set sail state
@@ -89,14 +90,20 @@ public class ShipController : MonoBehaviour{
         // This multiplies the forward vector by ship speed / ammount of sails used.
         forwardForce = forwardForce * shipSpeed * Mathf.InverseLerp(minSailSize, maxSailSize, sailState);
 
-        shipRigidbody.AddForce(forwardForce, ForceMode.VelocityChange); // Apply force
+        shipRigidbody.AddForce(forwardForce, ForceMode.Acceleration); // Apply force
 
 
         // 2. Ship rotation.
 
+        // sails have to be applying force for rotation to work.
+        if(sailState != 2){
+            Vector3 rotationForce = shipRigidbody.gameObject.transform.up;
 
-        // if sail ratio 0 don't apply rotation, else apply rotation per wheel ratio
-        //rigidBody.AddTorque(upPullStrength*-rigidBody.angularVelocity*waterAngularDrag *Time.fixedDeltaTime, ForceMode.VelocityChange);
+            rotationForce = rotationForce * shipRotationSpeed * (Mathf.InverseLerp(wheelMaxRotation, -wheelMaxRotation, wheelRotation)*2-1);
+            // *2 -1 applied to inverse lerp to output a -1 to 1 value;
+            shipRigidbody.AddTorque(rotationForce, ForceMode.Acceleration); // Apply torque.
+        }
+        
     }
 
 

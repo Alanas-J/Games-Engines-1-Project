@@ -17,7 +17,8 @@ public class SeaFloater : MonoBehaviour{
     public int floaterCount = 1; // Ammount of floaters present, code to count floaters could be implemented
 
 
-    private void Update(){
+    // Fixed update is tied to each iteration of the physics engine, its smoother.
+    private void FixedUpdate(){
     
         // Gravity is distributed to each floater, this is to balance the floatation forces at each point.
         rigidBody.AddForceAtPosition(Physics.gravity/floaterCount, transform.position, ForceMode.Acceleration);

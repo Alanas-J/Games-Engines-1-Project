@@ -41,8 +41,8 @@ public class SeaFloater : MonoBehaviour{
 
 
             // Drag code
-            rigidBody.AddForce(upPullStrength*-rigidBody.velocity*waterDrag *Time.fixedDeltaTime, ForceMode.VelocityChange);
-            rigidBody.AddTorque(upPullStrength*-rigidBody.angularVelocity*waterAngularDrag *Time.fixedDeltaTime, ForceMode.VelocityChange);
+            rigidBody.AddForce(upPullStrength*-rigidBody.velocity*waterDrag *Time.fixedDeltaTime, ForceMode.Acceleration);
+            rigidBody.AddTorque(upPullStrength*-rigidBody.angularVelocity*waterAngularDrag *Time.fixedDeltaTime, ForceMode.Acceleration);
         }
     }
 

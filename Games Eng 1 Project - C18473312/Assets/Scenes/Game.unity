@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c2e0c7460258c46904c1aa3c485b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 300
-  shipRotationSpeed: 1
+  shipSpeed: 1000
+  shipRotationSpeed: 10
   sailControlSpeed: 20
   steeringSpeed: 80
   objectInterractionComponent: {fileID: 1931346228}
@@ -249,7 +249,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 0.95
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -257,11 +257,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.4
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
-      value: 0.95
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 178040341572895770, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
+      propertyPath: depthBeforeMaximumUpPull
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 257044524683501469, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
@@ -301,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 0.95
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -309,11 +313,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.4
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
-      value: 0.95
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198457423154341356, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
+      propertyPath: depthBeforeMaximumUpPull
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1261532247794446595, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -361,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 0.95
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -369,11 +377,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.4
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
-      value: 0.95
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183113651796553361, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
+      propertyPath: depthBeforeMaximumUpPull
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4591198465703791712, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -401,7 +413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789216873358823130, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 89.97166
+      value: 22.9
       objectReference: {fileID: 0}
     - target: {fileID: 5789216873358823130, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -437,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 0.95
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -445,11 +457,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.4
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
-      value: 0.95
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244419112762332898, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
+      propertyPath: depthBeforeMaximumUpPull
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6372953385065348749, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_Layer
@@ -461,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 0.95
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -469,11 +485,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.4
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
-      value: 0.95
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709603224252329907, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
+      propertyPath: depthBeforeMaximumUpPull
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7636852411967351406, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_Name
@@ -485,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterDrag
-      value: 0.95
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: floaterCount
@@ -493,11 +513,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: strengthOfUpPull
-      value: 1.4
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: waterAngularDrag
-      value: 0.95
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131040251776184788, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
+      propertyPath: depthBeforeMaximumUpPull
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8998924315697587466, guid: 89d707df6071060428ebc82d30639ca4, type: 3}
       propertyPath: m_LocalPosition.y

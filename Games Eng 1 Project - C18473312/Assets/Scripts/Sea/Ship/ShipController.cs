@@ -90,7 +90,7 @@ public class ShipController : MonoBehaviour{
         // This multiplies the forward vector by ship speed / ammount of sails used.
         forwardForce = forwardForce * shipSpeed * Mathf.InverseLerp(minSailSize, maxSailSize, sailState);
 
-        shipRigidbody.AddForce(forwardForce, ForceMode.Acceleration); // Apply force
+        shipRigidbody.AddForce(forwardForce*Time.deltaTime, ForceMode.Acceleration); // Apply force
 
 
         // 2. Ship rotation.
@@ -101,7 +101,7 @@ public class ShipController : MonoBehaviour{
 
             rotationForce = rotationForce * shipRotationSpeed * (Mathf.InverseLerp(wheelMaxRotation, -wheelMaxRotation, wheelRotation)*2-1);
             // *2 -1 applied to inverse lerp to output a -1 to 1 value;
-            shipRigidbody.AddTorque(rotationForce, ForceMode.Acceleration); // Apply torque.
+            shipRigidbody.AddTorque(rotationForce*Time.deltaTime, ForceMode.Acceleration); // Apply torque.
         }
         
     }

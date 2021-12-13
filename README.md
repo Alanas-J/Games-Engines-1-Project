@@ -10,11 +10,11 @@ Class Group: DT228/4  TU856/4
 This project features a ship you can sail accross an inifinite procedurally generated ocean terrain. 
 Featuring wave physics that influence the ship and ship steering controls akin to Sea of Theives.
 
-![Ship](./images/Ship.jpg) 
+![Ship](./images/Ship.JPG) 
 
-![Steering](./images/Steering.jpg) 
+![Steering](./images/Steering.JPG) 
 
-![Overhead view](./images/Overhead.jpg) 
+![Overhead view](./images/Overhead.JPG) 
 
 
 
@@ -34,7 +34,7 @@ Floatation physics are implemented by the use of a Rigidbody parent component, t
 ## Land Generation
 Land generation monobehaviour scripts are put into an Empty GameObject which then are used to create children Land Chunk objects, there are two Monobehaviour scripts present : 
 
-<img src="./images/LandConfiguration.jpg" alt="Landconfig" width="200"/>
+<img src="./images/LandConfiguration.JPG" alt="Landconfig" width="200"/>
 
 ### Land Chunk Data Generator
 
@@ -72,24 +72,24 @@ Sea Generation is a simpler implementation than the land generation, instead of 
 It features two classes and the sea sound present in the game.
 
 ### Land Chunk Data Generator
-<img src="./images/SeaConfig.jpg" alt="SeaConfig" width="200"/>
+<img src="./images/SeaConfig.JPG" alt="SeaConfig" width="200"/>
 
 ## Floatation Physics
-<img src="./images/Floatation.jpg" alt="Floatation" width="200"/>
+<img src="./images/Floatation.JPG" alt="Floatation" width="200"/>
 
 ## Character Controls
 ### Land Chunk Data Generator
-<img src="./images/Floatation.jpg" alt="Floatation" height="200"/>
+<img src="./images/Floatation.JPG" alt="Floatation" height="200"/>
 ### Land Chunk Data Generator
-<img src="./images/CameraScripts.jpg" alt="CameraScripts" height="200"/>
+<img src="./images/CameraScripts.JPG" alt="CameraScripts" height="200"/>
 ### Land Chunk Data Generator
-<img src="./images/ApplyShipVelocity.jpg" alt="ApplyShipVelocity" height="200"/>
+<img src="./images/ApplyShipVelocity.JPG" alt="ApplyShipVelocity" height="200"/>
 
 
 
 ## Ship Controls
 
-<img src="./images/ShipController.jpg" alt="Ship Controller" width="200"/>
+<img src="./images/ShipController.JPG" alt="Ship Controller" width="200"/>
 
 
 

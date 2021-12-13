@@ -43,7 +43,8 @@ public class ApplyShipVelocity : MonoBehaviour {
             if(this.gameObject.transform.parent != shipCurrentlyOn.transform ){
 
                 this.gameObject.transform.parent = shipCurrentlyOn.transform;
-                this.gameObject.transform.localRotation = Quaternion.identity;
+                // Sets the X and Z rotation but keeps looking round rotation.
+                this.gameObject.transform.localRotation = Quaternion.Euler(0, this.gameObject.transform.localRotation.eulerAngles.y ,0);
             }
             
             onShip = true;
@@ -56,7 +57,8 @@ public class ApplyShipVelocity : MonoBehaviour {
             // Apply orientation
             if(this.gameObject.transform.parent != null ){
                 this.gameObject.transform.parent = null;
-                this.gameObject.transform.rotation = Quaternion.identity;
+                // Sets the X and Z rotation but keeps looking round rotation.
+                this.gameObject.transform.rotation = Quaternion.Euler(0, this.gameObject.transform.rotation.eulerAngles.y ,0);
             }
             onShip = false;
         }

@@ -175,8 +175,39 @@ To keep the player in sync with the ships position, the velocity of the specifie
 | mixkit-sea-waves-loop-1196.wav | Royalty free sound effect taken from [Envato Elements](https://elements.envato.com/sea-waves-loop-WXUL4PL?utm_source=mixkit&utm_medium=referral&utm_campaign=elements_mixkit_cs_sfx_tag) |
 
 # References
+1. [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3)
+2. [JTA Games's Interraction Feature Tutorial](https://www.youtube.com/watch?v=lZThP8KG1W0)
+3. [Brackey's FIRST PERSON MOVEMENT in Unity Tutorial](https://www.youtube.com/watch?v=_QajrabyTJc)
+4. [Tom Weiland's Ship Buoyancy Tutorial](https://www.youtube.com/watch?v=eL_zHQEju8s)
+5. [Envato Elements Wave Sound](https://elements.envato.com/sea-waves-loop-WXUL4PL?utm_source=mixkit&utm_medium=referral&utm_campaign=elements_mixkit_cs_sfx_tag)
+6. [Plai's Rigidbody FPS Controller Turotial EP 1-2 (Currently not in use but exists in codebase)](https://www.youtube.com/watch?v=LqnPeqoJRFY&list=PLRiqz5jhNfSo-Fjsx3vv2kvYbxUDMBZ0u)
+7. [Unity Scripting API Docs](https://docs.unity3d.com/ScriptReference/)
+
 
 # What I am most proud of in the assignment
+My most proud achievement is the boat controls and physics, they work really well, would just need slight more tinkering and could be reused if I ever decide to make a future game project. They can be easily expanded upon.
+
+And it's just a fun feature.
+
 
 # Proposal submitted earlier can go here:
 
+The initial proposal file submitted was, this was deviated from with emailed permission: 
+
+```
+Proposal -
+Marching Cubes or Minecraft Like Cube Terrain Voxel Generation (Inspired by Minecraft, Muck, Valeheim, Astroneer)
+Possible Additional Features: 
+	- Creation of vehicle to navigate the terrain
+	- Possible music interraction with the terrain in theme with Brian's previous submissions.
+	- Terrain Manipulation
+	- NPCs 
+
+
+
+Another thing I wanted to do but most likely scrapped :
+Simple roguelike dungeon crawler game, using tileset generation think (Diable, PoE, Warframe)
+Isometric perspective, each level increases size and enemies.
+
+Git Repo Link : https://github.com/Alanas-J/Games-Engines-1-Project
+```

@@ -629,7 +629,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 661493616993135800, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
       propertyPath: m_Mass
-      value: 0.0000001
+      value: 1e+9
+      objectReference: {fileID: 0}
+    - target: {fileID: 661493616993135800, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 661493616993135800, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 869481711550690331, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
       propertyPath: m_RootOrder

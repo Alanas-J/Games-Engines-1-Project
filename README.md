@@ -192,7 +192,7 @@ And it's just a fun feature.
 
 # Proposal submitted earlier can go here:
 
-The initial proposal file submitted was, this was deviated from with emailed permission: 
+The initial proposal file submitted was the following, this was deviated from with emailed permission: 
 
 ```
 Proposal -

@@ -23,16 +23,16 @@ public class CharacterControllerPlayerMovement : MonoBehaviour
     void Update(){
 
 
-        float xMovement = Input.GetAxis("Horizontal");
-        float zMovement = Input.GetAxis("Vertical");
+        float xMovement = Input.GetAxisRaw("Horizontal");
+        float zMovement = Input.GetAxisRaw("Vertical");
 
         // transform.right and transform.forward respectively define normalized vectors of where and X and Z are pointing in the world. 
         // below logic outputs (xMovement,0,yMovement) adjusted by current rotation state of the player object.
         Vector3 movement = transform.right * xMovement + transform.forward * zMovement;
 
 
-        // Character Controller is used to implement the movement.
-        characterController.Move(movement*speed*Time.deltaTime);
+        // Character Controller is used to implement the movement. // Normalized is set to ensure that the speed is the same in all vertors, instead of more to combined value vectors.
+        characterController.Move(movement.normalized*speed*Time.deltaTime);
 
 
 

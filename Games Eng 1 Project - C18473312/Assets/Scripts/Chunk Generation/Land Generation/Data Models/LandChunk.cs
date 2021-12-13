@@ -11,6 +11,7 @@ public class LandChunk {
         // Rendering Components
         MeshRenderer meshRenderer; 
         MeshFilter meshFilter;
+        MeshCollider meshCollider;
 
         // The real position of the chunk.
         Vector2 position; 
@@ -36,6 +37,9 @@ public class LandChunk {
             chunkObject = new GameObject("Land Chunk");
             meshRenderer = chunkObject.AddComponent<MeshRenderer>();;
             meshFilter = chunkObject.AddComponent<MeshFilter>();
+            meshCollider = chunkObject.AddComponent<MeshCollider>();
+            chunkObject.layer = 7;
+
             meshRenderer.material = material;
             
 
@@ -100,6 +104,7 @@ public class LandChunk {
                         if(lodMesh.hasMesh){
                             meshFilter.mesh = lodMesh.mesh;
                             previousLODIndex = lodIndex;
+                            meshCollider.sharedMesh = lodMesh.mesh;
                         } else if (!lodMesh.hasRequestedMesh){
                             lodMesh.RequestMesh(chunkData);
                         }

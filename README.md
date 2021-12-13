@@ -6,6 +6,8 @@ Student Number: C18473312
 
 Class Group: DT228/4  TU856/4
 
+Short Demo Video: [Video](https://youtu.be/d66-5EpAMI8) 
+
 # Description of the project
 This project features a ship you can sail accross an inifinite procedurally generated ocean terrain. 
 Featuring wave physics that influence the ship and ship steering controls akin to Sea of Theives.

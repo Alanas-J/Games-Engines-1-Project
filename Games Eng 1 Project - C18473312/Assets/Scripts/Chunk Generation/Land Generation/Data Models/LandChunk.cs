@@ -38,6 +38,8 @@ public class LandChunk {
             meshRenderer = chunkObject.AddComponent<MeshRenderer>();;
             meshFilter = chunkObject.AddComponent<MeshFilter>();
             meshCollider = chunkObject.AddComponent<MeshCollider>();
+            chunkObject.layer = 7;
+
             meshRenderer.material = material;
             
 

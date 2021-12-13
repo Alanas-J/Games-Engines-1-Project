@@ -436,7 +436,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2418244089265817524, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2418244089265817524, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: shipRigidbody
@@ -449,6 +449,10 @@ PrefabInstance:
     - target: {fileID: 9042635492053716328, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: jumpHeight
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042635492053716328, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 9042635492053716333, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: m_Name
@@ -645,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 661493616993135800, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 661493616993135800, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
       propertyPath: m_CollisionDetection

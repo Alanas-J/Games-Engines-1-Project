@@ -152,16 +152,16 @@ To keep the player in sync with the ships position, the velocity of the specifie
 
 | Class/asset | Source |
 |-----------|-----------|
-| ChunkData.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| LODMesh.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| LODMeshThreshold.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| MeshData.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| MeshDataGenerator.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| TextureGenerator.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| LandNoiseSource.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| LandChunkDataGenerator.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| LandChunk.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
-| LandGenerator.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| ChunkData.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| LODMesh.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| LODMeshThreshold.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| MeshData.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| MeshDataGenerator.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| TextureGenerator.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| LandNoiseSource.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| LandChunkDataGenerator.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| LandChunk.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
+| LandGenerator.cs | Modified from [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3) |
 | Interractable.cs | Modified from [JTA Games's Interraction Feature Tutorial](https://www.youtube.com/watch?v=lZThP8KG1W0) |
 | ObjectInterraction.cs | Modified from [JTA Games's Interraction Feature Tutorial](https://www.youtube.com/watch?v=lZThP8KG1W0) |
 | LookingAround.cs | Modified from [Brackey's FIRST PERSON MOVEMENT in Unity Tutorial](https://www.youtube.com/watch?v=_QajrabyTJc) |
@@ -177,7 +177,7 @@ To keep the player in sync with the ships position, the velocity of the specifie
 | mixkit-sea-waves-loop-1196.wav | Royalty free sound effect taken from [Envato Elements](https://elements.envato.com/sea-waves-loop-WXUL4PL?utm_source=mixkit&utm_medium=referral&utm_campaign=elements_mixkit_cs_sfx_tag) |
 
 # References
-1. [Sebastian Lague's Terrain Generation Tutorial Series EP 1-12](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3)
+1. [Sebastian Lague's Terrain Generation Tutorial Series EP 1-11 + 13](https://www.youtube.com/watch?v=wbpMiKiSKm8&list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3)
 2. [JTA Games's Interraction Feature Tutorial](https://www.youtube.com/watch?v=lZThP8KG1W0)
 3. [Brackey's FIRST PERSON MOVEMENT in Unity Tutorial](https://www.youtube.com/watch?v=_QajrabyTJc)
 4. [Tom Weiland's Ship Buoyancy Tutorial](https://www.youtube.com/watch?v=eL_zHQEju8s)
@@ -191,6 +191,7 @@ My most proud achievement is the boat controls and physics, they work really wel
 
 And it's just a fun feature.
 
+Another really cool feature is my solution for the common character/moving platform predicament. With the current implementation its possible for a character to jump from one ship to another in motion and ship to land and land to ship reorienting works perfectly.
 
 # Proposal submitted earlier can go here:
 

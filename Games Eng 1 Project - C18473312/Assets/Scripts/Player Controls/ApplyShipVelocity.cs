@@ -33,8 +33,6 @@ public class ApplyShipVelocity : MonoBehaviour {
         
         // Check for ship
         if(Physics.Raycast(groundChecker.position, groundChecker.up*-1, out hit, groundCheckerDistance, shipMask, QueryTriggerInteraction.UseGlobal)){
-            PlayerGUIText.AddString("On Ship");
-            PlayerGUIText.AddString(hit.rigidbody.gameObject.name);
 
             shipCurrentlyOn = hit.rigidbody.gameObject;
             shipRigidbody = hit.rigidbody;
@@ -51,8 +49,7 @@ public class ApplyShipVelocity : MonoBehaviour {
         }
         
         // Check for land.
-        else if(Physics.Raycast(groundChecker.position, groundChecker.up*-1, out hit, groundCheckerDistance, groundMask, QueryTriggerInteraction.UseGlobal)){
-            PlayerGUIText.AddString("On Land");
+        else if(Physics.Raycast(groundChecker.position, groundChecker.up*-1, out hit, groundCheckerDistance, groundMask, QueryTriggerInteraction.UseGlobal)) {
 
             // Apply orientation
             if(this.gameObject.transform.parent != null ){

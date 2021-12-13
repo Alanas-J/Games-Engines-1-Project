@@ -432,19 +432,31 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5789216872904593971}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2418244089265817524, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2418244089265817524, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: shipRigidbody
       value: 
       objectReference: {fileID: 6154296300210752144}
+    - target: {fileID: 9042635492053716328, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
+      propertyPath: gravity
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042635492053716328, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
+      propertyPath: jumpHeight
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 9042635492053716333, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: m_Name
       value: CharController Player
       objectReference: {fileID: 0}
     - target: {fileID: 9042635492053716335, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9042635492053716335, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -452,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9042635492053716335, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.829998
+      value: 52.73
       objectReference: {fileID: 0}
     - target: {fileID: 9042635492053716335, guid: 5a6cf617944fa8b48b5675a6b4de67d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -633,7 +645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 661493616993135800, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661493616993135800, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
       propertyPath: m_CollisionDetection
@@ -641,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 869481711550690331, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 869481711550690331, guid: 91e57894bc55f504abf6618a9c54117a, type: 3}
       propertyPath: m_LocalPosition.x

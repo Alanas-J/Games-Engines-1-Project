@@ -51,7 +51,7 @@ public class CharacterControllerPlayerMovement : MonoBehaviour
     void ApplyGravity(){
         // Check if on ground and not jumping.
         if(onGround){
-            gravityVelocity.y = 0.1f; // slight gravity pull always
+            gravityVelocity.y = 0.01f; // slight gravity pull always
         } 
         else {
             gravityVelocity.y -= gravity * (Time.deltaTime); // Gravity per second is added to velocity

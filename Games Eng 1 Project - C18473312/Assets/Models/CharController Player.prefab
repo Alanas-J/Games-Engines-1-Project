@@ -128,7 +128,6 @@ MonoBehaviour:
   interractAbleObjectMask:
     serializedVersion: 2
     m_Bits: 64
-  interactImage: {fileID: 0}
 --- !u!1 &9042635491023923672
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9042635492050859960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9042635492053716335}
@@ -308,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 9042635492053716334}
   speed: 12
+  jumpHeight: 10
   gravity: 20
   groundChecker: {fileID: 9042635492050859961}
   groundMask:
@@ -325,4 +325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c092e8cc5b9dcd42a0556ad737ee71a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipRigidbody: {fileID: 0}
+  groundChecker: {fileID: 9042635492050859961}
+  shipMask:
+    serializedVersion: 2
+    m_Bits: 256
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128

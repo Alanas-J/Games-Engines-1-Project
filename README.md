@@ -12,6 +12,8 @@ Short Demo Video: [Video](https://youtu.be/d66-5EpAMI8)
 This project features a ship you can sail accross an inifinite procedurally generated ocean terrain. 
 Featuring wave physics that influence the ship and ship steering controls akin to Sea of Theives.
 
+![Ship Image 2](./images/Ship2.JPG) 
+
 ![Ship](./images/Ship.JPG) 
 
 ![Steering](./images/Steering.JPG) 
@@ -143,7 +145,9 @@ It takes the parametres of shipspeed, rotation speed, and the speed at which sai
 <img src="./images/ShipController.JPG" alt="Ship Controller" width="400"/>
 
 ### Attaching Player to Ship
-To keep the player in sync with the ships position, the velocity of the specified Rigidbody is added to the player with the ```CharacterController.Move(Vector3 motion)``` in the ForceUpdate() lifecycle method.
+To keep the player in sync with the ships position, the velocity of the current ship's Rigidbody that the player is standing on is added to the player with the ```CharacterController.Move(Vector3 motion)``` in the ForceUpdate() lifecycle method.
+
+This script performs a Raycast of the ground looking for two parameter collider layer masks. If a ship is detected the RaycastHit is used to derive a Rigidbody and the GameObject that owns the Rigidbody. The player character's orientation is then swapped to the ships. If a player touches land the orientation swaps back to being independent.
 
 <img src="./images/ApplyShipVelocity.JPG" alt="ApplyShipVelocity" height="200"/>
 
